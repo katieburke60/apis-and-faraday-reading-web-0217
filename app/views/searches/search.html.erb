@@ -4,3 +4,18 @@
   <%= text_field_tag :zipcode %>
   <%= submit_tag "Search!" %>
 <% end %>
+<br></br>
+
+<div>
+  <% if @error %>
+    ERROR: <%= @error %>
+  <% else %>
+    <ul>
+      <% @venues.map do |venue| %>
+        <li>
+          <%= venue['name'] %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
